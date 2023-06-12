@@ -20,7 +20,7 @@ If you want to deploy Balam you'll need to create an `.env` file and meet certai
 
 Before anything, you'll need to create an .env file. You can use .env.example to create it. This are the contents of the file:
 
-```bash
+```bash title=".env"
 #Django
 DEBUG=1
 SECRET_KEY="mysecretkey" # define a different secret key for your project
