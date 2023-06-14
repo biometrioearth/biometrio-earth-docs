@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Balam docs',
-  tagline: 'Documentation of Balam backend and API',
+  title: 'Biometrio.earth docs',
+  tagline: 'Documentation of Biometrio.earth tools, apps and platforms',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -54,19 +54,25 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Balam docs',
+        title: 'Biometrio.earth docs',
         logo: {
           alt: 'Biometrio.earth logo',
-          src: 'img/be-logo.png',
+          src: 'img/be-logo.svg',
+          srcDark: 'img/be-logo-dark.svg',
         },
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'balamSidebar',
             position: 'left',
-            label: 'Docs',
+            label: 'Balam',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'pufferfishSidebar',
+            position: 'left',
+            label: 'Pufferfish',
           },
           {
             href: 'https://github.com/biometrioearth/balam',
@@ -76,10 +82,10 @@ const config = {
         ],
       },
       footer: {
-        style: 'dark',
+        style: 'light',
         links: [
           {
-            title: 'Docs',
+            title: 'Balam Docs',
             items: [
               {
                 label: 'Intro',
@@ -92,6 +98,23 @@ const config = {
               {
                 label: 'Apps and Models',
                 to: '/docs/category/balam---apps-and-models',
+              },
+            ],
+          },
+          {
+            title: 'Pufferfish Docs',
+            items: [
+              {
+                label: 'Intro',
+                to: '/docs/intro',
+              },
+              {
+                label: 'Beadmex',
+                to: '/docs/category/beadmex',
+              },
+              {
+                label: 'Tochtli',
+                to: '/docs/category/tochtli',
               },
             ],
           },
@@ -109,7 +132,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Balam docs. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Biometrio.earth docs. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,

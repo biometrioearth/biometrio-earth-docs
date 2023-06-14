@@ -4,41 +4,27 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Authentication',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Balam',
     description: (
       <>
-        Balam uses JWT tokens to handle the authentication in requests.
+        Balam is a platform to store and manage monitoring data of biometrio.earth projects.
       </>
     ),
   },
   {
-    title: 'Making queries',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Pufferfish',
     description: (
       <>
-        Balam uses internally graphene and a modified version of
-        graphene-django to handle model types and its resolvers.
-      </>
-    ),
-  },
-  {
-    title: 'Mutation',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        Balam uses its own custom mutation type base class, so making mutations
-        in balam is quite easy.
+        Pufferfish is a tool which help to receive - organize - visualize - data of biometrio.earth.
       </>
     ),
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({title, description}) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>

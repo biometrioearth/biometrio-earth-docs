@@ -77,8 +77,13 @@ pretty simple:
 }
 ```
 
-in the query above we are retrieving all the projects. The common fields in the _all_ queries are **items** and **pageInfo**. The **items** field holds the list of all objects in the model, and its fields are the fields of the model. The **pageInfo** field, is a special field to give info about the pagination. All list
-queries are paginated and by default the max number of items in the response are **10**. You can have more info about the pagination with the **pageInfo** field:
+in the query above we are retrieving all the projects. The common fields in the _all_ queries are **items** and **pageInfo**. The **items** field holds the list of all objects in the model, and its fields are the fields of the model. The **pageInfo** field, is a special field to give info about the pagination. 
+
+:::note 
+All list queries are paginated and by default the max number of items in the response is **10**.
+:::
+
+You can have more info about the pagination with the **pageInfo** field:
 
 ```graphql
 {
