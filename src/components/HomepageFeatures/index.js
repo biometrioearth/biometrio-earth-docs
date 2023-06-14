@@ -15,7 +15,7 @@ const FeatureList = [
     title: 'Pufferfish',
     description: (
       <>
-        Pufferfish is a tool which help to receive - organize - visualize - data of biometrio.earth.
+        Pufferfish is a tool which helps to receive - organize - visualize - data of biometrio.earth.
       </>
     ),
   },
