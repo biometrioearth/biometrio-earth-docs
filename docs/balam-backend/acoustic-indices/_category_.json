@@ -1,0 +1,9 @@
+{
+    "label": "Acoustic Indices",
+    "position": 4,
+    "link": {
+      "type": "generated-index",
+      "description": "Acoustic Indices app models."
+    }
+  }
+  

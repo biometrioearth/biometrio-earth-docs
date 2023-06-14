@@ -66,7 +66,7 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Intro',
+            label: 'Docs',
           },
           {
             href: 'https://github.com/biometrioearth/balam',
@@ -82,8 +82,16 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Intro',
                 to: '/docs/intro',
+              },
+              {
+                label: 'API',
+                to: '/docs/category/balam---api',
+              },
+              {
+                label: 'Apps and Models',
+                to: '/docs/category/balam---apps-and-models',
               },
             ],
           },

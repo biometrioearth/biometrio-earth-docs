@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Balam intro
+# Intro
 
 Balam helps to manage biometrio.earth monitoring projects. It's built using Django (ver 4.1), and GraphQL with Graphene for the API.
 

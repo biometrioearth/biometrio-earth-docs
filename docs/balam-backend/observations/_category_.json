@@ -1,0 +1,9 @@
+{
+    "label": "Observations",
+    "position": 3,
+    "link": {
+      "type": "generated-index",
+      "description": "Observations app models."
+    }
+  }
+  
