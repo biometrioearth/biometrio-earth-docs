@@ -89,12 +89,12 @@ list of ids:
 ```graphql
 mutation {
 	createGroup(
-        name: "test group 1"
-        users: [
+      name: "test group 1"
+      users: [
         "56yda30e-96eb-4367-bab1-1d0421ad360c",
         "56yda30e-96eb-65kl-568k-1d0421ad360c",
         "56yda30e-96eb-549k-bab1-1d345jad360c"
-        ]
+      ]
     ) {
         id
     }
