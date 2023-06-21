@@ -10,7 +10,7 @@ The site table has information about the polygon where the science team is monit
 |:--------:|:-------------:|:------------------:|:------------------:|------------------:|
 | identifier | string | ✓ | Site identifier within the company | <span style={{ borderBottom: "1px solid green"}}>Unique.</span> <span style={{ borderBottom: "1px solid green"}}>Required.</span> |
 | description | string | | Short description of the site | Optional |
-| metadata | JSON | | Site's metadata where we can include extra information of the site | Optional |
+| metadata | JSON | | Site's metadata where we can include extra information | Optional |
 | geometry | Polygon | | Polygon which delimits area of the site | Optional |
 | ecosystem | Foreign Key (UUID) | | Ecosystem of the Site | Optional |
 
