@@ -36,8 +36,14 @@ mutation {
   } 
 }
 ```
+:::info
+You must not include the `project_hash` field when creating a project. This is automatically filled by Django using the shortname. 
+:::
 
-you can have the list of enum values for the countries with this query:
+
+## Enums
+
+You can have the list of enum values for the countries with this query:
 
 ```graphql
 {
@@ -46,6 +52,33 @@ you can have the list of enum values for the countries with this query:
     enumValues {
       name
       description
+    }
+  }
+}
+```
+
+this returns:
+
+```graphql
+{
+  "data": {
+    "__type": {
+      "name": "ProjectCountries",
+      "enumValues": [
+        {
+          "name": "AF",
+          "description": "Afghanistan"
+        },
+        {
+          "name": "AX",
+          "description": "Åland Islands"
+        },
+        {
+          "name": "AL",
+          "description": "Albania"
+        },
+        ...
+      ]
     }
   }
 }
@@ -64,6 +97,108 @@ and also the list of enum values for the project configuration:
   }
 }
 ```
-:::info
-You must not include the `project_hash` field when creating a project. This is automatically filled by Django using the shortname. 
+which returns: 
+
+```graphql
+{
+  "data": {
+    "__type": {
+      "name": "ProjectmanagementProjectProjectConfigurationChoices",
+      "enumValues": [
+        {
+          "name": "A_1",
+          "description": "Only sampling points"
+        },
+        {
+          "name": "A_2",
+          "description": "Sampling points with sites"
+        },
+        {
+          "name": "A_3",
+          "description": "Sites, Sampling Areas and Sampling points"
+        }
+      ]
+    }
+  }
+}
+```
+the `A_` prefix is attached by graphene due to collision issues, the actual value stored in the database doesn't have this prefix.
+
+## Special fields
+
+When querying the country, in the `project` query or in any other query that uses the `ProjectType` you can get more information:
+
+```graphql
+{
+  project(shortname: "test") {
+    countries {
+      name
+    	code  
+			alpha3
+      numeric
+      iocCode
+    }
+  }
+}
+```
+
+The fields of the countries object type refers to:
+
+- `name` for the full country name
+- `code` for the ISO 3166-1 two character country code
+- `alpha3` for the ISO 3166-1 three character country code
+- `numeric` for the ISO 3166-1 numeric country code
+- `iocCode` for the International Olympic Committee country code
+
+Also, in `ProjectType` you can do something similar with projectConfiguration, the fields available are
+
+- `value` the actual value saved in the database
+- `description` the human-readable description of the project configuration.
+
+you can query that like this
+
+```graphql
+{
+  project(shortname: "xprize_test_annotations") {
+    countries {
+      name
+      code
+      alpha3
+      numeric
+      iocCode
+    }
+    projectConfiguration {
+      value
+      description
+    }
+  }
+}
+```
+
+which would respond
+
+```graphql
+{
+  "data": {
+    "project": {
+      "countries": [
+        {
+          "name": "Singapore",
+          "code": "SG",
+          "alpha3": "SGP",
+          "numeric": 702,
+          "iocCode": "SGP"
+        }
+      ],
+      "projectConfiguration": {
+        "value": 1,
+        "description": "Only sampling points"
+      }
+    }
+  }
+}
+```
+
+:::note
+When using the `filters` argument of the List queries with the `countries` field, you should only use the `contains` and `notContains` operators, to have a better response. That's because when we save more than one country, it is saved as a comma separated string.
 :::
