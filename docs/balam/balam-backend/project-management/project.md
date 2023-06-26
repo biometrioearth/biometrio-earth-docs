@@ -123,6 +123,9 @@ which returns:
 }
 ```
 the `A_` prefix is attached by graphene due to collision issues, the actual value stored in the database doesn't have this prefix.
+:::caution
+When creating or udating a new project you must use the enum to refer the value of the project configuration. For example if you want to set the project as the more complex one, you set A_3 as the value for projectConfiguration.
+:::
 
 ## Special fields
 

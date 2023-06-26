@@ -15,3 +15,38 @@ Has information about the devices used in the field. If they are broken, active 
 | status | string | | Status of the device. It can be active, inactive, broken or missing | <span style={{ borderBottom: "1px solid green"}}>Required.</span> | 
 | current_site_id | Foreign Key (UUID) | | The current site where device has been deployed | Optional |
 | current_project | Foreign Key (UUID) | | The current project where device has been deployed | Optional |
+
+## Enums
+
+In the device model there are 2 enum fields which are `status` and `deviceType`. You can query these two enum fields to check the available choices with the following queries:
+
+
+### Device status
+```graphql
+{
+  __type(name: "ProjectmanagementDeviceStatusChoices") {
+    name
+    enumValues {
+      name
+      description
+    }
+  }
+}
+```
+
+### Device type
+
+```graphql
+{
+  __type(name: "ProjectmanagementDeviceDeviceTypeChoices") {
+    name
+    enumValues {
+      name
+      description
+    }
+  }
+}
+```
+
+
+don't forget to use the `name` field in the `enumValues` object of the response for your inputs in a device mutation.
