@@ -11,10 +11,10 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'http://ec2-3-249-8-94.eu-west-1.compute.amazonaws.com/',
+  url: 'https://biometrioearth.github.io/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/be-docs',
+  baseUrl: '/biometrio-earth-docs/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
